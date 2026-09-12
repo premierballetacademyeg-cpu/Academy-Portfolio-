@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premier Ballet Academy — 2025–2026 Season Highlights</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#3A0E17;
+    --maroon:#4A0F1D;
+    --maroon-deep:#3A0913;
+    --ivory:#F7F1E6;
+    --card:#FDFBF6;
+    --gold:#B4934F;
+    --gold-deep:#8C6E33;
+    --grey-text:#5B5049;
+    --placeholder:#E3DFD7;
+    --line:#D8CDB6;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#EDEAE2;
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    padding:36px 12px;
+  }
+  .serif{ font-family:'Cormorant Garamond', serif; }
+  .poster{
+    max-width:980px; margin:0 auto;
+    background:var(--ivory);
+    padding:44px 48px 0;
+    position:relative;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+  @media (max-width:640px){ .poster{ padding:28px 20px 0; } }
+
+  /* watermark dancers */
+  .watermark{ position:absolute; top:20px; width:220px; opacity:0.10; z-index:0; }
+  .watermark.left{ left:-30px; }
+  .watermark.right{ right:-30px; transform:scaleX(-1); }
+  .watermark svg{ width:100%; fill:var(--maroon); }
+
+  .rel{ position:relative; z-index:1; }
+
+  /* ---- HEADER ---- */
+  header{ text-align:center; padding-bottom:30px; }
+  .badge{
+    width:132px; height:132px; border-radius:50%;
+    border:2px solid var(--gold); margin:0 auto 22px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    background:var(--card);
+    position:relative;
+  }
+  .badge .ring-text{
+    position:absolute; inset:6px; border-radius:50%;
+    font-size:0.5rem; letter-spacing:0.14em; color:var(--maroon);
+    font-weight:600; text-align:center; padding-top:6px;
+  }
+  .badge svg{ width:46px; height:46px; margin-top:14px; }
+  .badge .names{
+    font-family:'Cormorant Garamond', serif; font-style:italic;
+    font-size:0.6rem; color:var(--maroon); margin-top:2px; text-align:center; line-height:1.1;
+  }
+  h1.title{
+    font-size:clamp(1.7rem,4vw,2.5rem); letter-spacing:0.05em;
+    color:var(--maroon); font-weight:700;
+  }
+  .season-num{
+    font-size:clamp(2.6rem,7vw,4rem); color:var(--gold-deep);
+    font-weight:600; margin-top:6px; letter-spacing:0.02em;
+  }
+  h2.sub{
+    font-family:'Work Sans',sans-serif; font-weight:600;
+    letter-spacing:0.3em; font-size:clamp(1rem,2.4vw,1.5rem);
+    color:var(--maroon); margin-top:6px;
+  }
+  .tagline{
+    margin-top:14px; font-size:0.8rem; letter-spacing:0.06em; color:var(--grey-text);
+    text-transform:uppercase;
+  }
+
+  /* ---- generic panel bits ---- */
+  .panel-label{
+    display:inline-block; background:var(--maroon); color:var(--ivory);
+    font-size:0.72rem; letter-spacing:0.1em; font-weight:600;
+    padding:7px 16px; margin-bottom:14px;
+  }
+  .photo-ph{
+    background:var(--placeholder); border:1px solid var(--line);
+    width:100%; min-height:70px; display:flex; align-items:center; justify-content:center;
+    color:#a49c8d; font-size:0.7rem; letter-spacing:0.05em;
+    overflow:hidden; position:relative;
+  }
+  .photo-ph img, .photo-ph video{
+    width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;
+  }
+  .badge img, .badge video{
+    width:100%; height:100%; border-radius:50%; object-fit:cover; position:absolute; inset:0;
+  }
+
+  /* ---- ROW 1: medals + side panels ---- */
+  .row1{ display:grid; grid-template-columns:1.5fr 1fr; gap:22px; padding-bottom:26px; }
+  @media (max-width:760px){ .row1{ grid-template-columns:1fr; } }
+
+  .medal-box{
+    background:var(--maroon); color:var(--ivory);
+    padding:28px 26px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center;
+  }
+  @media (max-width:520px){ .medal-box{ grid-template-columns:1fr; } }
+  .medal-box h3{ font-size:1.05rem; letter-spacing:0.02em; font-weight:600; line-height:1.35; }
+  .medal-divider{ width:52px; height:1px; background:var(--gold); margin:14px 0; }
+  .medal-count-wrap{ display:flex; align-items:center; justify-content:center; gap:6px; margin:10px 0; }
+  .laurel svg{ width:38px; height:60px; fill:var(--gold); }
+  .total-num{ font-family:'Cormorant Garamond',serif; font-size:4.6rem; font-weight:600; color:var(--gold); line-height:1; }
+  .ribbon{
+    text-align:center; background:var(--gold); color:var(--maroon-deep);
+    font-weight:700; font-size:0.78rem; letter-spacing:0.08em;
+    padding:7px 10px; margin-top:4px;
+  }
+  .medal-tallies{ display:grid; gap:14px; }
+  .medal-row{ display:flex; align-items:center; gap:12px; }
+  .medal-dot{
+    width:30px; height:30px; border-radius:50%; flex:none;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.65rem; font-weight:700; color:var(--maroon-deep);
+  }
+  .medal-dot.gold{ background:#D9B85B; }
+  .medal-dot.silver{ background:#C9C7C2; }
+  .medal-dot.bronze{ background:#B87A4E; }
+  .medal-row .n{ font-family:'Cormorant Garamond',serif; font-size:1.7rem; font-weight:600; }
+  .medal-row .lbl{ font-size:0.68rem; letter-spacing:0.06em; color:var(--ivory); opacity:0.85; }
+  .medal-photo{ grid-column:1 / -1; }
+  .medal-photo .photo-ph{ min-height:150px; background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); color:rgba(255,255,255,0.5); }
+
+  .side-stack{ display:flex; flex-direction:column; gap:16px; }
+  .achievements-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:16px; padding-bottom:30px; }
+  .side-panel{
+    border:1px solid var(--line); background:var(--card); padding:18px;
+    display:grid; grid-template-columns:70px 1fr; gap:14px; align-items:start;
+  }
+  .side-panel .photo-ph{ min-height:70px; }
+  .side-panel h4{ font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--maroon); font-weight:700; }
+  .side-panel .role{ font-size:0.76rem; color:var(--grey-text); margin-top:2px; }
+  .side-panel .result{ font-size:0.8rem; color:var(--gold-deep); font-weight:600; margin-top:6px; line-height:1.3; }
+  .side-panel.gala{ grid-template-columns:70px 1fr; }
+  .gala .num{ font-family:'Cormorant Garamond',serif; font-size:2.6rem; color:var(--maroon); font-weight:700; line-height:1; }
+  .gala .cap{ font-size:0.72rem; letter-spacing:0.05em; color:var(--maroon); font-weight:600; margin-top:4px; }
+  .gala .note{ font-size:0.74rem; color:var(--grey-text); margin-top:8px; }
+
+  /* ---- ROW 2: productions ---- */
+  .section-title{ text-align:center; margin-bottom:18px; }
+  .section-title span{
+    font-size:0.78rem; letter-spacing:0.12em; font-weight:600; color:var(--maroon);
+    border-top:1px solid var(--gold); border-bottom:1px solid var(--gold);
+    padding:6px 20px;
+  }
+  .productions{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding-bottom:30px; }
+  @media (max-width:640px){ .productions{ grid-template-columns:1fr; } }
+  .production h4{ font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--maroon); text-align:center; font-weight:700; letter-spacing:0.02em; }
+  .production .when{ text-align:center; font-size:0.76rem; color:var(--grey-text); margin:4px 0 10px; }
+  .production .photo-ph{ min-height:90px; }
+
+  /* ---- ROW 3: summer intensive ---- */
+  .row3{ padding-bottom:30px; border-top:1px solid var(--line); margin-top:6px; padding-top:30px; }
+  .intensive{ text-align:center; max-width:520px; margin:0 auto; }
+  .intensive h4{ font-family:'Cormorant Garamond',serif; color:var(--maroon); font-size:1.3rem; font-weight:700; }
+  .intensive .place{ font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--gold-deep); font-size:1.15rem; margin:2px 0 12px; }
+  .stat-icons{ display:flex; gap:22px; flex-wrap:wrap; margin-bottom:14px; justify-content:center; }
+  .stat-icons div{ display:flex; align-items:center; gap:8px; font-size:0.78rem; color:var(--maroon); font-weight:600; }
+  .stat-icons svg{ width:22px; height:22px; fill:none; stroke:var(--maroon); stroke-width:1.6; }
+  .disciplines{ font-size:0.8rem; color:var(--grey-text); letter-spacing:0.03em; line-height:1.8; margin-bottom:14px; }
+  .intensive .photo-ph{ min-height:110px; aspect-ratio:16/9; }
+
+  .teachers{ margin-top:34px; padding-top:28px; border-top:1px solid var(--line); }
+  .teachers h5{ text-align:center; font-family:'Cormorant Garamond',serif; color:var(--gold-deep); font-style:italic; font-size:0.85rem; margin-bottom:2px; }
+  .teachers .feat{ text-align:center; font-size:0.78rem; letter-spacing:0.06em; color:var(--maroon); font-weight:600; margin-bottom:18px; }
+  .teacher-grid{ display:flex; justify-content:center; align-items:center; gap:22px; flex-wrap:wrap; }
+  .teacher{ text-align:center; }
+  .teacher .photo-ph{ min-height:60px; position:relative; }
+  .teacher .num{
+    position:absolute; bottom:-9px; left:50%; transform:translateX(-50%);
+    width:20px; height:20px; border-radius:50%; background:var(--maroon); color:var(--ivory);
+    font-size:0.65rem; display:flex; align-items:center; justify-content:center; font-weight:700;
+  }
+  .teacher .name{ margin-top:14px; font-size:0.72rem; font-weight:600; color:var(--ink); }
+
+  /* ---- ROW 4: highlights strip ---- */
+  .highlights-wrap{ border-top:1px solid var(--line); padding:28px 0; }
+  .highlights{ display:grid; grid-template-columns:repeat(6,1fr); gap:14px; text-align:center; }
+  @media (max-width:760px){ .highlights{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:420px){ .highlights{ grid-template-columns:repeat(2,1fr); } }
+  .hl svg{ width:30px; height:30px; fill:none; stroke:var(--gold-deep); stroke-width:1.5; margin:0 auto 8px; }
+  .hl .n{ font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--maroon); font-weight:700; }
+  .hl .l{ font-size:0.66rem; letter-spacing:0.04em; color:var(--grey-text); margin-top:2px; line-height:1.3; }
+
+  /* ---- FOOTER BANNER ---- */
+  .banner{
+    background:var(--maroon); color:var(--ivory); margin:0 -48px;
+    padding:34px 48px; text-align:center;
+  }
+  @media (max-width:640px){ .banner{ margin:0 -20px; padding:28px 20px; } }
+  .banner-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; text-align:left; }
+  .banner-title .yr{ font-size:0.85rem; color:var(--gold); letter-spacing:0.08em; font-weight:600; }
+  .banner-title .go{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.7rem; margin-top:2px; }
+  .banner-icons{ display:flex; gap:28px; flex-wrap:wrap; }
+  .banner-icons div{ text-align:center; font-size:0.62rem; letter-spacing:0.04em; color:var(--ivory); opacity:0.9; max-width:80px; }
+  .banner-icons svg{ width:26px; height:26px; fill:none; stroke:var(--gold); stroke-width:1.5; margin:0 auto 6px; display:block; }
+  .banner .journey{
+    margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.2);
+    font-family:'Cormorant Garamond',serif; letter-spacing:0.15em; font-size:0.9rem; color:var(--gold);
+  }
+
+  @media print{
+    body{ background:#fff; padding:0; }
+    .poster{ border:none; max-width:100%; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="watermark left"><svg viewBox="0 0 260 420" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"><path d="M130 30a18 18 0 1 0 0.1 0z"/><path d="M130 65 C122 90 118 110 120 135"/><path d="M120 135 C90 150 60 145 34 118"/><path d="M120 135 C150 128 178 108 196 70"/><path d="M120 135 C112 165 108 200 116 235"/><path d="M116 235 C96 268 84 310 92 356"/><path d="M116 235 C150 244 182 268 200 306 C210 328 214 352 210 378"/></g></svg></div>
+  <div class="watermark right"><svg viewBox="0 0 260 420" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"><path d="M130 30a18 18 0 1 0 0.1 0z"/><path d="M130 65 C122 90 118 110 120 135"/><path d="M120 135 C90 150 60 145 34 118"/><path d="M120 135 C150 128 178 108 196 70"/><path d="M120 135 C112 165 108 200 116 235"/><path d="M116 235 C96 268 84 310 92 356"/><path d="M116 235 C150 244 182 268 200 306 C210 328 214 352 210 378"/></g></svg></div>
+
+  <div class="rel">
+    <header>
+      <div class="badge">
+        <video autoplay muted loop playsinline poster="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216201/PBA_Logo_hpdiso.png">
+          <source src="https://res.cloudinary.com/dctzfkesd/video/upload/v1789218680/Animated_PBA_Logo_imegkj.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h1 class="title serif">PREMIER BALLET ACADEMY</h1>
+      <div class="season-num serif">2025–2026</div>
+      <h2 class="sub">SEASON HIGHLIGHTS</h2>
+      <div class="tagline">A season of excellence, achievements &amp; unforgettable experiences</div>
+    </header>
+
+    <!-- ROW 1 -->
+    <div class="row1" style="grid-template-columns:1fr;">
+      <div class="medal-box">
+        <div style="grid-column:1/-1;">
+          <h3 class="serif" style="text-align:center; font-size:1.3rem;">MOST AWARDED ACADEMY<br>AT GALAXY DANCE COMPETITION</h3>
+          <div class="medal-divider" style="margin:14px auto;"></div>
+        </div>
+        <div>
+          <div class="medal-count-wrap">
+            <span class="laurel"><svg viewBox="0 0 40 60"><path d="M20 5C10 15 8 40 20 55C32 40 30 15 20 5Z" opacity="0"/><path d="M18 8 C8 18 6 40 18 54" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 14l4 2M11 22l4 2M10 30l4 1M11 38l4 1M14 46l3 2" stroke="currentColor" stroke-width="1.6"/></svg></span>
+            <div class="total-num">64</div>
+            <span class="laurel" style="transform:scaleX(-1);"><svg viewBox="0 0 40 60"><path d="M18 8 C8 18 6 40 18 54" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 14l4 2M11 22l4 2M10 30l4 1M11 38l4 1M14 46l3 2" stroke="currentColor" stroke-width="1.6"/></svg></span>
+          </div>
+          <div class="ribbon">TOTAL MEDALS</div>
+        </div>
+        <div class="medal-tallies">
+          <div class="medal-row"><div class="medal-dot gold">★</div><div><div class="n serif">30</div><div class="lbl">GOLD MEDALS</div></div></div>
+          <div class="medal-row"><div class="medal-dot silver">★</div><div><div class="n serif">16</div><div class="lbl">SILVER MEDALS</div></div></div>
+          <div class="medal-row"><div class="medal-dot bronze">★</div><div><div class="n serif">18</div><div class="lbl">BRONZE MEDALS</div></div></div>
+        </div>
+        <div class="medal-photo"><div class="photo-ph"><video autoplay muted loop playsinline><source src="https://res.cloudinary.com/dctzfkesd/video/upload/v1789224938/Galaxy_ykwkds.mp4" type="video/mp4"></video></div></div>
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="section-title"><span>SEASON ACHIEVEMENTS</span></div>
+    <div class="achievements-grid">
+      <div class="side-panel">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216124/Nour_Mahfouz_di35aa.jpg" alt="Nour Mahfouz"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">TOP SCORE OVERALL</span>
+          <h4>Nour Mahfouz</h4>
+          <div class="result">Achieved the highest score in the entire competition, across all categories.</div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216124/Nadia_Abou_Sedira_gehi8v.jpg" alt="Nadia Abosedira"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">INTERNATIONAL ACHIEVEMENT</span>
+          <h4>IDTC Competition — Italy</h4>
+          <div class="role">Nadia Abosedira</div>
+          <div class="result">3rd Place · Junior Contemporary</div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216125/Tamara_Karim_s7kf2d.jpg" alt="Tamara Karim"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">FROM PREMIER TO THE STAGE</span>
+          <h4>Tamara Karim</h4>
+          <div class="role">Student of Premier Ballet Academy</div>
+          <div class="result">Signed as a Dancer at Cairo Opera House — Contemporary Company</div>
+        </div>
+      </div>
+      <div class="side-panel gala">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789225847/cbcf1876-7307-494f-b3f3-8c494ac47972.png" alt="Gala de Danza"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">GALA DE DANZA</span>
+          <div class="num">31</div>
+          <div class="cap">PREMIER STUDENTS ACCEPTED TO PERFORM AT GALA DE DANZA</div>
+          <div class="note">The highest number of accepted students from any academy in Egypt.</div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216125/9_graduates_of_National_Ballet_School_Belgrade_crfg8a.jpg" alt="National Ballet School Belgrade graduates"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">INTERNATIONAL PLACEMENT</span>
+          <h4>National Ballet School Belgrade</h4>
+          <div class="result">9 Premier students graduated into the National Ballet School Belgrade.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: PRODUCTIONS -->
+    <div class="section-title"><span>MAJOR PRODUCTIONS</span></div>
+    <div class="productions">
+      <div class="production">
+        <h4>The Nutcracker</h4>
+        <div class="when">Annual Performance</div>
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789219068/nutcracker_gekkra.jpg" alt="The Nutcracker"></div>
+      </div>
+      <div class="production">
+        <h4>Peter Pan</h4>
+        <div class="when">2026 Performance</div>
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789219084/Peter_Pan_1_yj6lcg.jpg" alt="Peter Pan"></div>
+      </div>
+      <div class="production">
+        <h4>Survivor</h4>
+        <div class="when">Contemporary Performance</div>
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789219061/Galaxy_y9jokp.jpg" alt="Survivor"></div>
+      </div>
+    </div>
+
+    <!-- ROW 3: SUMMER INTENSIVE -->
+    <div class="row3">
+      <div class="intensive">
+        <h4 class="serif">PREMIER SUMMER INTENSIVE 2026</h4>
+        <div class="place">El Alamein</div>
+        <div class="stat-icons">
+          <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>8 DAYS</div>
+          <div><svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>7 NIGHTS</div>
+          <div><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.6"/><path d="M2 21c0-4 3-6.5 6-6.5s6 2.5 6 6.5M14 21c.3-3 2-5.5 5-5.5s4.5 2 4.7 5.5"/></svg>5 WORKSHOP DAYS</div>
+        </div>
+        <div class="disciplines">BALLET · CONTEMPORARY · CHARACTER<br>PERFORMANCE · BEACH · POOL<br>TEAM ACTIVITIES</div>
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789219101/Summer_Intensive_uluwxv.png" alt="Premier Summer Intensive"></div>
+      </div>
+      <div class="teachers">
+        <h5>Featuring</h5>
+        <div class="feat">4 INTERNATIONAL TEACHERS</div>
+        <div class="teacher-grid">
+          <img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789225027/79eca56b-5b36-454e-8e8c-42e67e97a115.png" alt="Tatjana Youssry, Mohamed Youssry, Isidora Stanišić" style="max-width:320px; width:100%; border-radius:6px; display:block;">
+          <div class="teacher">
+            <div class="num" style="position:static; width:26px; height:26px; margin:0 auto 8px;">4</div>
+            <div class="name">Peter<br>Copek</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 4: HIGHLIGHTS -->
+    <div class="highlights-wrap">
+      <div class="section-title"><span>OUR SEASON IN HIGHLIGHTS</span></div>
+      <div class="highlights">
+        <div class="hl"><svg viewBox="0 0 24 24"><circle cx="12" cy="15" r="6"/><path d="M9 3h6l-2 6h-2z"/></svg><div class="n serif">64</div><div class="l">MEDALS WON</div></div>
+        <div class="hl"><svg viewBox="0 0 24 24"><path d="M8 4h8v4a4 4 0 0 1-8 0V4Z"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5"/><path d="M12 12v4M9 20h6M10 16h4v4h-4z"/></svg><div class="n serif" style="font-size:1rem;">MULTIPLE</div><div class="l">COMPETITIONS &amp; PARTICIPATIONS</div></div>
+        <div class="hl"><svg viewBox="0 0 24 24"><circle cx="8" cy="10" r="5"/><circle cx="16" cy="10" r="5"/><path d="M6 13c0 3 1 6 2 8M18 13c0 3-1 6-2 8"/></svg><div class="n serif">3</div><div class="l">MAJOR PRODUCTIONS</div></div>
+        <div class="hl"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.6"/><path d="M2 21c0-4 3-6.5 6-6.5s6 2.5 6 6.5M14 21c.3-3 2-5.5 5-5.5s4.5 2 4.7 5.5"/></svg><div class="n serif">31</div><div class="l">STUDENTS IN GALA DE DANZA</div></div>
+        <div class="hl"><svg viewBox="0 0 24 24"><path d="M12 4a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM7 20c0-4 3-7 5-7M17 20c0-4-2-8-5-9"/></svg><div class="n serif" style="font-size:0.95rem;">PROFESSIONAL</div><div class="l">OPPORTUNITIES FOR OUR STUDENTS</div></div>
+        <div class="hl"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.9L21 10l-4.5 4.2L17.6 21 12 17.7 6.4 21l1.1-6.8L3 10l6.4-1.1L12 3Z"/></svg><div class="n serif" style="font-size:0.95rem;">COUNTLESS</div><div class="l">MEMORIES &amp; MILESTONES</div></div>
+      </div>
+    </div>
+
+    <!-- FOOTER BANNER -->
+    <div class="banner">
+      <div class="banner-top">
+        <div class="banner-title">
+          <div class="yr">2026–2027</div>
+          <div class="go serif">We go further.</div>
+        </div>
+        <div class="banner-icons">
+          <div><svg viewBox="0 0 24 24"><path d="M4 20c2-6 4-9 8-9s6 3 8 9"/><circle cx="12" cy="7" r="3"/></svg>MORE TRAINING</div>
+          <div><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.9L21 10l-4.5 4.2L17.6 21 12 17.7 6.4 21l1.1-6.8L3 10l6.4-1.1L12 3Z"/></svg>MORE OPPORTUNITIES</div>
+          <div><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>MORE INTERNATIONAL EXPERIENCES</div>
+          <div><svg viewBox="0 0 24 24"><circle cx="8" cy="10" r="5"/><circle cx="16" cy="10" r="5"/><path d="M6 13c0 3 1 6 2 8M18 13c0 3-1 6-2 8"/></svg>MORE PERFORMANCES</div>
+          <div><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8 13l-2 8 6-3 6 3-2-8"/></svg>MORE ACHIEVEMENTS</div>
+        </div>
+      </div>
+      <div class="journey">THE JOURNEY CONTINUES.</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
