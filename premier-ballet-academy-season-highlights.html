@@ -178,15 +178,18 @@
   .teachers{ margin-top:34px; padding-top:28px; border-top:1px solid var(--line); }
   .teachers h5{ text-align:center; font-family:'Cormorant Garamond',serif; color:var(--gold-deep); font-style:italic; font-size:0.85rem; margin-bottom:2px; }
   .teachers .feat{ text-align:center; font-size:0.78rem; letter-spacing:0.06em; color:var(--maroon); font-weight:600; margin-bottom:18px; }
-  .teacher-grid{ display:flex; justify-content:center; align-items:center; gap:22px; flex-wrap:wrap; }
-  .teacher{ text-align:center; }
-  .teacher .photo-ph{ min-height:60px; position:relative; }
+  .teacher-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; align-items:start; }
+  @media (max-width:760px){ .teacher-grid{ grid-template-columns:repeat(2,1fr); } }
+  .teacher{ text-align:center; min-width:0; }
+  .teacher .photo-ph{ min-height:0; aspect-ratio:1; position:relative; width:100%; max-width:112px; margin:0 auto; border-radius:50%; }
   .teacher .num{
     position:absolute; bottom:-9px; left:50%; transform:translateX(-50%);
     width:20px; height:20px; border-radius:50%; background:var(--maroon); color:var(--ivory);
     font-size:0.65rem; display:flex; align-items:center; justify-content:center; font-weight:700;
   }
-  .teacher .name{ margin-top:14px; font-size:0.72rem; font-weight:600; color:var(--ink); }
+  .teacher .name{ margin-top:12px; font-family:'Cormorant Garamond',serif; font-size:1rem; line-height:1.05; font-weight:700; color:var(--maroon); }
+  .teacher .title{ margin-top:6px; font-size:0.62rem; line-height:1.25; letter-spacing:0.03em; color:var(--maroon); font-weight:700; text-transform:uppercase; }
+  .teacher .affiliation{ margin-top:4px; font-size:0.62rem; line-height:1.25; color:var(--grey-text); }
 
   /* ---- ROW 4: highlights strip ---- */
   .highlights-wrap{ border-top:1px solid var(--line); padding:28px 0; }
@@ -267,6 +270,31 @@
     <div class="section-title"><span>SEASON ACHIEVEMENTS</span></div>
     <div class="achievements-grid">
       <div class="side-panel">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/drzjgiguw/image/upload/v1789463116/Amina_Mokhlis_snxspe.jpg" alt="Amina Mokhlis"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">SEASON PARTICIPANT</span>
+          <h4>Amina Mokhlis</h4>
+          <div class="result">Premier Ballet Academy dancer and season participant.</div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/drzjgiguw/image/upload/v1789463268/Mariam_Fouad_valc17.png" alt="Mariam Fouad"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">SEASON PARTICIPANT</span>
+          <h4>Mariam Fouad</h4>
+          <div class="result">Premier Ballet Academy dancer and season participant.</div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216125/Tamara_Karim_s7kf2d.jpg" alt="Tamara Karim"></div>
+        <div>
+          <span class="panel-label" style="margin-bottom:8px;">FROM PREMIER TO THE STAGE</span>
+          <h4>Tamara Karim</h4>
+          <div class="role">Student of Premier Ballet Academy</div>
+          <div class="result">Signed as a Dancer at Cairo Opera House — Contemporary Company</div>
+        </div>
+      </div>
+      <div class="side-panel">
         <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216124/Nour_Mahfouz_di35aa.jpg" alt="Nour Mahfouz"></div>
         <div>
           <span class="panel-label" style="margin-bottom:8px;">TOP SCORE OVERALL</span>
@@ -278,18 +306,9 @@
         <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216124/Nadia_Abou_Sedira_gehi8v.jpg" alt="Nadia Abosedira"></div>
         <div>
           <span class="panel-label" style="margin-bottom:8px;">INTERNATIONAL ACHIEVEMENT</span>
-          <h4>IDTC Competition — Italy</h4>
-          <div class="role">Nadia Abosedira</div>
+          <h4>Nadia Abosedira</h4>
+          <div class="role">IDTC Competition — Italy</div>
           <div class="result">3rd Place · Junior Contemporary</div>
-        </div>
-      </div>
-      <div class="side-panel">
-        <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789216125/Tamara_Karim_s7kf2d.jpg" alt="Tamara Karim"></div>
-        <div>
-          <span class="panel-label" style="margin-bottom:8px;">FROM PREMIER TO THE STAGE</span>
-          <h4>Tamara Karim</h4>
-          <div class="role">Student of Premier Ballet Academy</div>
-          <div class="result">Signed as a Dancer at Cairo Opera House — Contemporary Company</div>
         </div>
       </div>
       <div class="side-panel gala" style="grid-column:1/-1; grid-template-columns:1fr; gap:16px;">
@@ -352,10 +371,29 @@
         <h5>Featuring</h5>
         <div class="feat">4 INTERNATIONAL TEACHERS</div>
         <div class="teacher-grid">
-          <img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789225027/79eca56b-5b36-454e-8e8c-42e67e97a115.png" alt="Tatjana Youssry, Mohamed Youssry, Isidora Stanišić" style="max-width:320px; width:100%; border-radius:6px; display:block;">
           <div class="teacher">
-            <div class="num" style="position:static; width:26px; height:26px; margin:0 auto 8px;">4</div>
-            <div class="name">Peter<br>Copek</div>
+            <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789540244/PETER_COPEK_focqqr.png" alt="Peter Copek"></div>
+            <div class="name">Peter Copek</div>
+            <div class="title">MA Ballet Pedagogy</div>
+            <div class="affiliation">Germany, Netherlands</div>
+          </div>
+          <div class="teacher">
+            <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789540246/Mohamed_Youssry_wygujn.png" alt="Mohamed Youssry"></div>
+            <div class="name">Mohamed Youssry</div>
+            <div class="title">International Ballet Soloist</div>
+            <div class="affiliation">Semperoper Dresden - Ballet Zurich</div>
+          </div>
+          <div class="teacher">
+            <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789540248/Tatjana_Youssry_jzqloo.png" alt="Tatjana Youssry"></div>
+            <div class="name">Tatjana Youssry</div>
+            <div class="title">Former Principal Dancer</div>
+            <div class="affiliation">Academic Princess Grace Monte-Carlo</div>
+          </div>
+          <div class="teacher">
+            <div class="photo-ph"><img src="https://res.cloudinary.com/dctzfkesd/image/upload/v1789540248/Isidora_Stani%C5%A1i%C4%87_epjb7q.png" alt="Isidora Stanisic"></div>
+            <div class="name">Isidora Stanisic</div>
+            <div class="title">Award-Winning Choreographer</div>
+            <div class="affiliation">Stanica Service for Contemporary Dance</div>
           </div>
         </div>
       </div>
